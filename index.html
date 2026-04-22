@@ -111,7 +111,7 @@ body.light-mode .oneline h2 .accent{color:var(--coral)}
 
 /* FRAMES — editorial photo essay */
 .frames{position:relative;padding:18vh 0 14vh;overflow:hidden}
-.frames-inner{max-width:1600px;margin:0 auto;padding:0 6vw;display:grid;grid-template-columns:1fr 1.4fr;gap:6rem;align-items:start}
+.frames-inner{max-width:1400px;margin:0 auto;padding:0 6vw}
 .frames-text{position:sticky;top:14vh;padding-top:2rem}
 .frames-title{font-family:var(--font-serif);font-weight:300;font-size:clamp(4rem,11vw,10rem);line-height:.85;letter-spacing:-.03em;margin:1.2rem 0 2.5rem}
 .frames-title em{font-family:var(--font-italic);font-style:italic;color:var(--gold);font-weight:400}
@@ -321,8 +321,18 @@ footer .foot-meta a:hover{color:var(--gold)}
 .spotify-bar{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:rgba(10,9,8,.88);backdrop-filter:blur(24px) saturate(140%);-webkit-backdrop-filter:blur(24px) saturate(140%);border-top:1px solid rgba(196,162,101,.2);padding:.75rem 1.5rem;display:flex;align-items:center;gap:1.2rem;transform:translateY(110%);transition:transform .6s cubic-bezier(.19,1,.22,1)}
 .spotify-bar.active{transform:translateY(0)}
 .spotify-bar .sb-label{font-family:var(--font-mono);font-size:.55rem;letter-spacing:.28em;text-transform:uppercase;color:var(--dim);white-space:nowrap;flex-shrink:0}
-.spotify-bar .sb-label em{font-family:var(--font-italic);font-style:italic;color:var(--gold);margin-right:.4rem;text-transform:none;letter-spacing:0;font-size:.75rem}
-.spotify-bar iframe{flex:1;height:80px;border:0;border-radius:10px;display:block;background:#000;min-width:0}
+.spotify-bar .sb-label em{font-family:var(--font-italic);font-style:italic;color:var(--gold);margin-right:.4rem;text-transform:none;letter-spacing:0;font-size:.85rem}
+.spotify-bar .sb-label #abArtist{color:var(--dim);opacity:.7;margin-left:.3rem}
+.spotify-bar .ab-btn{width:42px;height:42px;border:1px solid rgba(196,162,101,.4);border-radius:50%;background:transparent;color:var(--gold);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;flex-shrink:0;padding:0}
+.spotify-bar .ab-btn:hover{background:var(--gold);border-color:var(--gold)}
+.spotify-bar .ab-btn svg{width:14px;height:14px;fill:var(--gold);transition:fill .3s}
+.spotify-bar .ab-btn:hover svg{fill:var(--black)}
+.spotify-bar .ab-btn .ab-ico-pause{display:none}
+.spotify-bar.playing .ab-btn .ab-ico-play{display:none}
+.spotify-bar.playing .ab-btn .ab-ico-pause{display:block}
+.spotify-bar .ab-progress{flex:1;height:3px;background:rgba(196,162,101,.15);border-radius:2px;cursor:pointer;position:relative;min-width:0}
+.spotify-bar .ab-progress-fill{position:absolute;inset:0;right:auto;width:0;background:var(--gold);border-radius:2px;transition:width .1s linear}
+.spotify-bar .ab-time{font-family:var(--font-mono);font-size:.62rem;letter-spacing:.2em;color:var(--dim);white-space:nowrap;flex-shrink:0}
 .spotify-bar .sb-close{width:32px;height:32px;border:1px solid rgba(196,162,101,.25);border-radius:50%;background:none;color:var(--dim);cursor:pointer;font-family:var(--font-mono);font-size:1rem;transition:all .3s;flex-shrink:0}
 .spotify-bar .sb-close:hover{color:var(--gold);border-color:var(--gold)}
 /* Spotify follow CTA in section head */
@@ -334,8 +344,7 @@ footer .foot-meta a:hover{color:var(--gold)}
 .spotify-follow:hover .arrow{opacity:1;transform:translateX(4px)}
 @media(max-width:640px){
   .spotify-bar{padding:.6rem .8rem;gap:.6rem}
-  .spotify-bar .sb-label{display:none}
-  .spotify-bar iframe{height:80px}
+  .spotify-bar .sb-label,.spotify-bar .ab-time{display:none}
 }
 
 /* RESPONSIVE */
@@ -424,10 +433,10 @@ body.light-mode .room-label{color:var(--cream)}
 
 <!-- STATS -->
 <div class="stats">
-  <div class="stat"><div class="stat-num">17</div><div class="stat-label">Years Behind Decks</div></div>
-  <div class="stat"><div class="stat-num">50<sup>+</sup></div><div class="stat-label">Venues Played</div></div>
+  <div class="stat"><div class="stat-num">18</div><div class="stat-label">Years Behind Decks</div></div>
+  <div class="stat"><div class="stat-num">100<sup>+</sup></div><div class="stat-label">Venues</div></div>
   <div class="stat"><div class="stat-num">8</div><div class="stat-label">Labels</div></div>
-  <div class="stat"><div class="stat-num">1<sup>st</sup></div><div class="stat-label">Album Incoming</div></div>
+  <div class="stat"><div class="stat-num">1<sup>st</sup></div><div class="stat-label">Albums Coming</div></div>
 </div>
 
 <!-- BIOGRAPHY -->
@@ -440,18 +449,18 @@ body.light-mode .room-label{color:var(--cream)}
     <div class="bio-text">
       <div class="section-kicker"><span>The Artist</span></div>
       <h2 class="bio-name">Alex <em>Twin</em>.</h2>
-      <div class="bio-sub">DJ · Producer · <span>Music Director at Addmind Group</span></div>
+      <div class="bio-sub">DJ · Producer</div>
       <div class="bio-copy">
-        <p>"Hello, I'm Alex Tudorache — also known as Alex Twin. I've been a DJ and music producer for the past <em>seventeen years</em>, and I'm also involved in music curation and management. I'm passionate about bringing creativity and business together in the music industry."</p>
-        <p>Music has always been the driving force in his life — guiding him through every phase and shaping who he is today. For the last <em>eleven years</em> that story has been written in Dubai, one of the world's most vibrant cities for nightlife, where he's led venues and groups as both a music director and a DJ. Today he's honoured to work with <em>Addmind Group</em>, a leader of the city's nightlife scene.</p>
-        <p>As Music Director, he oversees the musical direction of venues and events, making sure they align with each brand's identity — and assembles the teams of DJs who deliver it night after night at <em>Be Beach, Ushuaïa, Clap</em> and several other locations across the region.</p>
-        <p>Be Beach remains his favourite room in Dubai — a place that transforms seamlessly through the day and turns, as night falls, into a pulsating hub where some of the world's best DJs perform weekly. Recent nights there have put him alongside <em>Andrea Oliva, Shimza, Valeron, Birds of Mind</em> and <em>Pawsa</em>.</p>
-        <p>His biggest release to date, <em>"Bandido"</em>, arrived in summer 2024 and quietly ran away from him — the kind of track that writes its own year. In 2025 he's meticulously crafting his debut album, <em>"Here For Love"</em>, set to land by year's end alongside a circle of artists and friends close to his heart — with a handful of new tracks ready to see the light before it.</p>
+        <p>Alex Twin continues to ascend in the electronic music scene with his impressive string of releases and captivating DJ sets that have left audiences entranced. His talent and dedication haven't gone unnoticed, as he currently spearheads the music curation for some of Dubai's most iconic venues, such as <em>Ushuaia Dubai</em> and <em>Be Beach Dubai</em>. In these roles, he meticulously assembles great teams to deliver unforgettable musical experiences tailored to each venue's unique vibe.</p>
+        <p>Known for his dynamic mixing of <em>Electronic, Afro House, Melodic House, and Tech House</em>, Alex brings an unparalleled energy to locations around the globe. Whether performing in Dubai, Ibiza, Mykonos, Monaco, London, or St Tropez, each set is a testament to his adaptability and deep understanding of the crowd.</p>
+        <p>On the production front, Alex Twin's reputation continues to flourish. His latest releases on <em>Moblack, Madorasindahouse,</em> and <em>Radiate</em>, has gained a significant attention from the audience achieving over <em>10 million streams and 80 millions views</em> on media channels, sending ripples through the electronic music industry and proving that Alex Twin continues to make all the right moves in his burgeoning DJ and production career.</p>
+        <p>His work has earned the admiration and support of industry luminaries, and he has shared the DJ booth with heavyweights including <em>&amp;ME, Black Coffee, Arodes, Andrea Oliva, Francis Mercier, Bedouin, Jamie Jones, Ahmed Spins, Damian Lazarus, Pawsa, Adriatique, Michael Bibi, Dennis Cruz, DJ Tennis,</em> and <em>Carlita</em>, cementing his place in the electronic music hall of fame.</p>
+        <p>With a career dedicated to crafting unique sonic journeys, Alex Twin consistently proves that his passion and artistry has no limits. His journey is one of continuous evolution, consistently captivating audiences with his innovative soundscapes and producing magic wherever he performs.</p>
       </div>
       <div class="bio-meta">
         <div><span class="k">Based</span><span class="v">Dubai, UAE</span></div>
         <div><span class="k">Origin</span><span class="v">Romania</span></div>
-        <div><span class="k">Genres</span><span class="v">Afro · Melodic · Tech</span></div>
+        <div><span class="k">Genres</span><span class="v">Afro House · Melodic House · Tech House</span></div>
         <div><span class="k">Role</span><span class="v">Music Director</span></div>
       </div>
     </div>
@@ -461,15 +470,11 @@ body.light-mode .room-label{color:var(--cream)}
 <!-- FRAMES — editorial photo essay -->
 <section class="frames" id="frames">
   <div class="frames-inner">
-    <aside class="frames-text">
-      <h2 class="frames-title"><em>Yerevan</em>.</h2>
-      <p class="frames-pull">"Some nights the curtain drops, the lights go amber, and a city you barely know sings back every word."</p>
-    </aside>
     <div class="frames-grid">
-      <figure class="f f-1"><img src="photos/yerevan-1.jpg" alt="Alex Twin, Yerevan — 01" loading="lazy"></figure>
-      <figure class="f f-2"><img src="photos/yerevan-3.jpg" alt="Alex Twin, Yerevan — 02" loading="lazy"></figure>
-      <figure class="f f-3"><img src="photos/yerevan-2.jpg" alt="Alex Twin, Yerevan — 03" loading="lazy"></figure>
-      <figure class="f f-4"><img src="photos/yerevan-4.jpg" alt="Alex Twin, Yerevan — 04" loading="lazy"></figure>
+      <figure class="f f-1"><img src="photos/yerevan-1.jpg" alt="Alex Twin — 01" loading="lazy"></figure>
+      <figure class="f f-2"><img src="photos/yerevan-3.jpg" alt="Alex Twin — 02" loading="lazy"></figure>
+      <figure class="f f-3"><img src="photos/yerevan-2.jpg" alt="Alex Twin — 03" loading="lazy"></figure>
+      <figure class="f f-4"><img src="photos/yerevan-4.jpg" alt="Alex Twin — 04" loading="lazy"></figure>
     </div>
   </div>
 </section>
@@ -486,45 +491,38 @@ body.light-mode .room-label{color:var(--cream)}
     </a>
   </div>
   <div class="tracks">
-    <div class="track" data-spotify="REPLACE_ID_1" data-title="Samba De Janeiro" data-artist="John Junior, Alex Twin">
+    <div class="track" data-audio="audio/samba-de-janeiro.mp3" data-title="Samba De Janeiro" data-artist="John Junior, Alex Twin">
       <div class="t-num">01</div>
       <div class="t-title">Samba De <em>Janeiro</em></div>
-      <div class="t-meta">HMWL · 2024 · w/ John Junior</div>
+      <div class="t-meta">w/ John Junior · Original Mix</div>
       <div class="t-wave"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
       <div class="t-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
     </div>
-    <div class="track" data-spotify="REPLACE_ID_2" data-title="Beyond the Silence" data-artist="Alex Twin">
+    <div class="track" data-audio="audio/balada.mp3" data-title="Balada" data-artist="Alex Twin, Sylvio">
       <div class="t-num">02</div>
-      <div class="t-title">Beyond the <em>Silence</em></div>
-      <div class="t-meta">Extended Mix</div>
+      <div class="t-title"><em>Balada</em></div>
+      <div class="t-meta">w/ Sylvio · Extended</div>
       <div class="t-wave"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
       <div class="t-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
     </div>
-    <div class="track" data-spotify="REPLACE_ID_3" data-title="Give Me Love" data-artist="Alex Twin">
+    <div class="track" data-audio="audio/my-joy.mp3" data-title="My Joy" data-artist="Alex Twin">
       <div class="t-num">03</div>
-      <div class="t-title">Give Me <em>Love</em></div>
-      <div class="t-meta">Original Mix</div>
-      <div class="t-wave"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-      <div class="t-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-    </div>
-    <div class="track" data-spotify="REPLACE_ID_4" data-title="Don't Let Go" data-artist="Alex Twin, Dairo">
-      <div class="t-num">04</div>
-      <div class="t-title">Don't Let <em>Go</em></div>
-      <div class="t-meta">w/ Dairo</div>
-      <div class="t-wave"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-      <div class="t-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-    </div>
-    <div class="track" data-spotify="REPLACE_ID_5" data-title="E O Meu Axe" data-artist="Alex Twin">
-      <div class="t-num">05</div>
-      <div class="t-title">E O Meu <em>Axé</em></div>
+      <div class="t-title">My <em>Joy</em></div>
       <div class="t-meta">Extended Mix</div>
       <div class="t-wave"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
       <div class="t-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
     </div>
-    <div class="track" data-spotify="REPLACE_ID_6" data-title="The Request" data-artist="Christian Lepah, Alex Twin">
-      <div class="t-num">06</div>
-      <div class="t-title">The <em>Request</em></div>
-      <div class="t-meta">w/ Christian Lepah</div>
+    <div class="track" data-audio="audio/bena-bena.mp3" data-title="Bena Bena" data-artist="Alex Twin">
+      <div class="t-num">04</div>
+      <div class="t-title">Bena <em>Bena</em></div>
+      <div class="t-meta">Extended Mix</div>
+      <div class="t-wave"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      <div class="t-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+    </div>
+    <div class="track" data-audio="audio/damn-girl.mp3" data-title="Damn Girl" data-artist="Alex Twin">
+      <div class="t-num">05</div>
+      <div class="t-title">Damn <em>Girl</em></div>
+      <div class="t-meta">Original Mix</div>
       <div class="t-wave"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
       <div class="t-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
     </div>
@@ -542,9 +540,9 @@ body.light-mode .room-label{color:var(--cream)}
     <div class="room r-2" data-num="02"><video src="video/room-bebeach.mp4" autoplay muted loop playsinline preload="metadata"></video><div class="room-label"><span class="venue">Be Beach</span><span class="city">Dubai</span></div></div>
     <div class="room r-3" data-num="03"><video src="video/room-mykonos.mp4" autoplay muted loop playsinline preload="metadata"></video><div class="room-label"><span class="venue">Coya</span><span class="city">Mykonos</span></div></div>
     <div class="room r-4" data-num="04"><video src="video/room-beirut.mp4" autoplay muted loop playsinline preload="metadata"></video><div class="room-label"><span class="venue">Iris</span><span class="city">Beirut</span></div></div>
-    <div class="room r-5" data-num="05"><video src="video/room-bucharest.mp4" autoplay muted loop playsinline preload="metadata"></video><div class="room-label"><span class="venue">Hiro Bay</span><span class="city">Bucharest</span></div></div>
+    <div class="room r-5" data-num="05"><video src="video/room-paris.mp4" autoplay muted loop playsinline preload="metadata"></video><div class="room-label"><span class="venue">Matignon</span><span class="city">Paris</span></div></div>
     <div class="room r-6" data-num="06"><video src="video/room-armenia.mp4" autoplay muted loop playsinline preload="metadata"></video><div class="room-label"><span class="venue">Sunset</span><span class="city">Yerevan</span></div></div>
-    <div class="room r-7" data-num="07"><video src="video/room-tulum.mp4" autoplay muted loop playsinline preload="metadata"></video><div class="room-label"><span class="venue">Sound of Tulum</span><span class="city">Tulum</span></div></div>
+    <div class="room r-7" data-num="07"><video src="video/room-mc.mp4" autoplay muted loop playsinline preload="metadata"></video><div class="room-label"><span class="venue">MC</span><span class="city">Monaco</span></div></div>
     <div class="room r-8" data-num="08"><video src="video/room-abudhabi.mp4" autoplay muted loop playsinline preload="metadata"></video><div class="room-label"><span class="venue">Iris</span><span class="city">Abu Dhabi</span></div></div>
   </div>
 </section>
@@ -585,16 +583,16 @@ body.light-mode .room-label{color:var(--cream)}
 <section class="book" id="book">
   <div class="book-left">
     <h2 class="book-title">Book <em>him</em><span class="period">.</span></h2>
-    <p class="book-sub">Private events, residencies, festivals — worldwide.</p>
+    <p class="book-sub">Private events, festivals — worldwide.</p>
   </div>
   <div class="book-right">
     <div class="book-block">
-      <h4>Booking</h4>
-      <a href="mailto:booking@alextwin.com">booking@alextwin.com</a>
+      <h4>Bookings</h4>
+      <a href="mailto:info@alextwindj.com">info@alextwindj.com</a>
     </div>
     <div class="book-block">
       <h4>Management</h4>
-      <a href="mailto:management@alextwin.com">management@alextwin.com</a>
+      <a href="mailto:info@alextwindj.com">info@alextwindj.com</a>
     </div>
     <div class="book-links">
       <a class="book-link" href="#" target="_blank" rel="noopener"><span>Instagram</span><span class="arrow">→</span></a>
@@ -624,14 +622,20 @@ body.light-mode .room-label{color:var(--cream)}
   <div class="foot-logo"><img src="img/logo/alextwin-white.png" alt="Alex Twin"></div>
   <div class="foot-meta">
     ALEX TWIN · ALEX TUDORACHE · EST. 2008<br>
-    © <span id="year">2026</span> &nbsp;·&nbsp; <a href="mailto:booking@alextwin.com">booking@alextwin.com</a>
+    © <span id="year">2026</span> &nbsp;·&nbsp; <a href="mailto:info@alextwindj.com">info@alextwindj.com</a>
   </div>
 </footer>
 
-<!-- SPOTIFY BAR -->
+<!-- AUDIO BAR -->
 <div class="spotify-bar" id="spotifyBar">
-  <div class="sb-label"><em>Now playing</em> via Spotify</div>
-  <iframe id="spotifyEmbed" src="" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  <div class="sb-label"><em id="abTitle">Now playing</em><span id="abArtist"></span></div>
+  <audio id="audioPlayer" preload="none"></audio>
+  <button class="ab-btn" id="abPlayPause" title="Play/Pause" aria-label="Play/Pause">
+    <svg class="ab-ico-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+    <svg class="ab-ico-pause" viewBox="0 0 24 24"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+  </button>
+  <div class="ab-progress" id="abProgress"><div class="ab-progress-fill" id="abProgressFill"></div></div>
+  <div class="ab-time"><span id="abCurrent">0:00</span> / <span id="abDuration">0:00</span></div>
   <button class="sb-close" id="sbClose" title="Close">×</button>
 </div>
 
@@ -707,42 +711,56 @@ body.light-mode .room-label{color:var(--cream)}
   check();
 })();
 
-/* ---------- SPOTIFY EMBED BAR ---------- */
+/* ---------- AUDIO PLAYER BAR ---------- */
 (function(){
   const bar=document.getElementById('spotifyBar');
-  const frame=document.getElementById('spotifyEmbed');
+  const player=document.getElementById('audioPlayer');
+  const titleEl=document.getElementById('abTitle');
+  const artistEl=document.getElementById('abArtist');
+  const playBtn=document.getElementById('abPlayPause');
+  const progress=document.getElementById('abProgress');
+  const fill=document.getElementById('abProgressFill');
+  const curEl=document.getElementById('abCurrent');
+  const durEl=document.getElementById('abDuration');
   const close=document.getElementById('sbClose');
   let current=null;
-  function parseId(v){
-    if(!v)return null;
-    if(v.includes('spotify.com/track/')){return v.split('track/')[1].split(/[?&#]/)[0]}
-    return v.trim();
-  }
+  function fmt(s){if(!isFinite(s))return '0:00';s=Math.floor(s);return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')}
+  function setPlayingUI(on){bar.classList.toggle('playing',on);if(current)current.classList.toggle('playing',on)}
   document.querySelectorAll('.track').forEach(v=>{
     v.addEventListener('click',()=>{
-      const id=parseId(v.dataset.spotify);
-      if(!id||id.startsWith('REPLACE_')){
-        console.warn('Spotify ID missing on track — paste the Spotify track URL or ID into data-spotify.');
-        return;
-      }
+      const src=v.dataset.audio;if(!src)return;
       if(current===v){
-        bar.classList.remove('active');
-        v.classList.remove('playing');
-        frame.src='';
-        current=null;
+        if(player.paused)player.play();else player.pause();
         return;
       }
       if(current)current.classList.remove('playing');
-      current=v;v.classList.add('playing');
-      frame.src='https://open.spotify.com/embed/track/'+id+'?utm_source=generator&theme=0';
+      current=v;
+      titleEl.textContent=v.dataset.title||'';
+      artistEl.textContent=v.dataset.artist?' · '+v.dataset.artist:'';
+      player.src=src;player.play();
       bar.classList.add('active');
     });
   });
+  player.addEventListener('play',()=>setPlayingUI(true));
+  player.addEventListener('pause',()=>setPlayingUI(false));
+  player.addEventListener('ended',()=>setPlayingUI(false));
+  player.addEventListener('timeupdate',()=>{
+    const d=player.duration||0;
+    fill.style.width=(d?(player.currentTime/d*100):0)+'%';
+    curEl.textContent=fmt(player.currentTime);
+  });
+  player.addEventListener('loadedmetadata',()=>{durEl.textContent=fmt(player.duration)});
+  playBtn.addEventListener('click',()=>{if(!current)return;if(player.paused)player.play();else player.pause()});
+  progress.addEventListener('click',e=>{
+    const r=progress.getBoundingClientRect();
+    const p=(e.clientX-r.left)/r.width;
+    if(player.duration)player.currentTime=p*player.duration;
+  });
   close.addEventListener('click',()=>{
-    bar.classList.remove('active');
-    if(current)current.classList.remove('playing');
-    frame.src='';
-    current=null;
+    bar.classList.remove('active');bar.classList.remove('playing');
+    if(current){current.classList.remove('playing');current=null}
+    player.pause();player.removeAttribute('src');player.load();
+    fill.style.width='0%';curEl.textContent='0:00';durEl.textContent='0:00';
   });
 })();
 
