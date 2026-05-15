@@ -274,6 +274,28 @@ body.light-mode .marquee-item:hover{color:var(--coral);-webkit-text-stroke:1px v
 .reel-thumb:hover::after{border-color:var(--gold)}
 @media(max-width:720px){.reel-thumbs{grid-template-columns:repeat(2,1fr)}}
 
+/* TOUR */
+.tour{padding:14vh 6vw 8vh;max-width:1600px;margin:0 auto;position:relative}
+.tour-months{display:flex;flex-direction:column;gap:5rem;margin-top:5rem}
+.tour-month{display:grid;grid-template-columns:.9fr 2.1fr;gap:4rem;align-items:start;border-top:1px solid var(--line);padding-top:2.2rem}
+.tour-month-label{font-family:var(--font-italic);font-style:italic;font-size:clamp(2rem,4.5vw,3.6rem);color:var(--gold);line-height:.95;letter-spacing:-.01em}
+.tour-month-label span{display:block;font-family:var(--font-mono);font-style:normal;font-size:.7rem;letter-spacing:.3em;color:var(--dim);text-transform:uppercase;margin-top:.7rem}
+.tour-dates{display:flex;flex-direction:column}
+.tour-row{display:grid;grid-template-columns:5.5rem 1fr auto;gap:2rem;align-items:baseline;padding:1.25rem 0;border-bottom:1px solid var(--line);transition:padding-left .4s cubic-bezier(.19,1,.22,1),color .4s;position:relative}
+.tour-row:hover{padding-left:1rem;color:var(--gold)}
+.tour-row::before{content:'';position:absolute;left:-1rem;top:50%;width:0;height:1px;background:var(--gold);transition:width .4s cubic-bezier(.19,1,.22,1)}
+.tour-row:hover::before{width:1.5rem}
+.tour-day{font-family:var(--font-mono);font-size:.85rem;letter-spacing:.15em;color:var(--gold);text-transform:uppercase}
+.tour-where{font-family:var(--font-serif);font-size:clamp(1.1rem,1.6vw,1.5rem);color:var(--cream);line-height:1.3}
+.tour-where em{font-family:var(--font-italic);font-style:italic;color:var(--gold);font-weight:400}
+.tour-country{font-family:var(--font-mono);font-size:.65rem;letter-spacing:.3em;color:var(--dim);text-transform:uppercase;white-space:nowrap}
+.tour-row.holiday{opacity:.55}
+.tour-row.holiday .tour-where{font-style:italic;color:var(--dim)}
+body.light-mode .tour-row:hover{color:var(--coral)}
+body.light-mode .tour-row::before{background:var(--coral)}
+body.light-mode .tour-day,body.light-mode .tour-month-label,body.light-mode .tour-where em{color:var(--coral)}
+@media(max-width:900px){.tour-month{grid-template-columns:1fr;gap:1.5rem}.tour-row{grid-template-columns:4rem 1fr;gap:1rem}.tour-country{grid-column:2;font-size:.6rem;margin-top:.25rem}}
+
 /* BOOK */
 .book{padding:18vh 6vw 10vh;display:grid;grid-template-columns:1.1fr .9fr;gap:6rem;align-items:start;max-width:1600px;margin:0 auto}
 .book-title{font-family:var(--font-serif);font-weight:300;font-size:clamp(4rem,12vw,11rem);line-height:.88;letter-spacing:-.03em}
@@ -393,6 +415,7 @@ body.light-mode .room-label{color:var(--cream)}
     <a href="#sound" data-hover>Sound</a>
     <a href="#rooms" data-hover>Rooms</a>
     <a href="#reel" data-hover>Reel</a>
+    <a href="#tour" data-hover>Tour</a>
     <a href="#book" data-hover>Book</a>
   </div>
 </nav>
@@ -563,6 +586,74 @@ body.light-mode .room-label{color:var(--cream)}
     <div class="reel-caption">Aftermovie<em>Black Coffee · Dubai Harbour</em></div>
     <div class="reel-overlay" id="reelOverlay">
       <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+    </div>
+  </div>
+</section>
+
+<!-- TOUR -->
+<section class="tour" id="tour">
+  <div class="section-head">
+    <div class="section-kicker"><span>Tour · 2026</span></div>
+    <h2 class="section-title">Where to <em>Find</em> Him.</h2>
+  </div>
+  <div class="tour-months">
+    <div class="tour-month">
+      <div class="tour-month-label">May<span>26</span></div>
+      <div class="tour-dates">
+        <div class="tour-row"><span class="tour-day">15 May</span><span class="tour-where">Yerevan</span><span class="tour-country">Armenia</span></div>
+        <div class="tour-row"><span class="tour-day">16 May</span><span class="tour-where"><em>Initzio</em> · Constanța</span><span class="tour-country">Romania</span></div>
+        <div class="tour-row"><span class="tour-day">27 May</span><span class="tour-where">Paris</span><span class="tour-country">France</span></div>
+        <div class="tour-row"><span class="tour-day">30 May</span><span class="tour-where">Constanța</span><span class="tour-country">Romania</span></div>
+      </div>
+    </div>
+    <div class="tour-month">
+      <div class="tour-month-label">June<span>26</span></div>
+      <div class="tour-dates">
+        <div class="tour-row"><span class="tour-day">12 Jun</span><span class="tour-where">Casablanca</span><span class="tour-country">Morocco</span></div>
+        <div class="tour-row"><span class="tour-day">13 Jun</span><span class="tour-where">Tangier</span><span class="tour-country">Morocco</span></div>
+        <div class="tour-row"><span class="tour-day">26 Jun</span><span class="tour-where">Tunisia</span><span class="tour-country">Tunisia</span></div>
+        <div class="tour-row"><span class="tour-day">27 Jun</span><span class="tour-where"><em>Azimuth</em> · Constanța</span><span class="tour-country">Romania</span></div>
+      </div>
+    </div>
+    <div class="tour-month">
+      <div class="tour-month-label">July<span>26</span></div>
+      <div class="tour-dates">
+        <div class="tour-row"><span class="tour-day">04 Jul</span><span class="tour-where"><em>Nuba</em> · Constanța</span><span class="tour-country">Romania</span></div>
+        <div class="tour-row"><span class="tour-day">07 Jul</span><span class="tour-where"><em>Lío</em> w/ Arkadyan</span><span class="tour-country">Spain</span></div>
+        <div class="tour-row"><span class="tour-day">08 Jul</span><span class="tour-where">Athens</span><span class="tour-country">Greece</span></div>
+        <div class="tour-row"><span class="tour-day">17 Jul</span><span class="tour-where">Ibiza w/ Pablo Fierro</span><span class="tour-country">Spain</span></div>
+        <div class="tour-row"><span class="tour-day">18 Jul</span><span class="tour-where"><em>Azimuth</em></span><span class="tour-country">Romania</span></div>
+        <div class="tour-row"><span class="tour-day">22 Jul</span><span class="tour-where">Tamuda</span><span class="tour-country">Morocco</span></div>
+        <div class="tour-row"><span class="tour-day">23 Jul</span><span class="tour-where">Casablanca</span><span class="tour-country">Morocco</span></div>
+        <div class="tour-row"><span class="tour-day">24 Jul</span><span class="tour-where">Rabat</span><span class="tour-country">Morocco</span></div>
+        <div class="tour-row"><span class="tour-day">30 Jul</span><span class="tour-where">Tirana</span><span class="tour-country">Albania</span></div>
+      </div>
+    </div>
+    <div class="tour-month">
+      <div class="tour-month-label">August<span>26</span></div>
+      <div class="tour-dates">
+        <div class="tour-row"><span class="tour-day">01 Aug</span><span class="tour-where">South Albania</span><span class="tour-country">Albania</span></div>
+        <div class="tour-row"><span class="tour-day">07 Aug</span><span class="tour-where"><em>Untold Festival</em></span><span class="tour-country">Romania</span></div>
+        <div class="tour-row"><span class="tour-day">08 Aug</span><span class="tour-where"><em>Azimuth</em></span><span class="tour-country">Romania</span></div>
+        <div class="tour-row"><span class="tour-day">13 Aug</span><span class="tour-where"><em>UNVRS</em> · Ibiza</span><span class="tour-country">Spain</span></div>
+        <div class="tour-row holiday"><span class="tour-day">16–24 Aug</span><span class="tour-where">Holiday</span><span class="tour-country">—</span></div>
+      </div>
+    </div>
+    <div class="tour-month">
+      <div class="tour-month-label">September<span>26</span></div>
+      <div class="tour-dates">
+        <div class="tour-row"><span class="tour-day">05 Sep</span><span class="tour-where"><em>Persina Festival</em> · Belene</span><span class="tour-country">Bulgaria</span></div>
+        <div class="tour-row"><span class="tour-day">07 Sep</span><span class="tour-where"><em>Hï</em> · Ibiza</span><span class="tour-country">Spain</span></div>
+        <div class="tour-row"><span class="tour-day">09 Sep</span><span class="tour-where"><em>Hiro</em></span><span class="tour-country">Romania</span></div>
+        <div class="tour-row"><span class="tour-day">11 Sep</span><span class="tour-where">Barcelona</span><span class="tour-country">Spain</span></div>
+        <div class="tour-row"><span class="tour-day">21 Sep</span><span class="tour-where"><em>Nuba White</em></span><span class="tour-country">Romania</span></div>
+      </div>
+    </div>
+    <div class="tour-month">
+      <div class="tour-month-label">November<span>26</span></div>
+      <div class="tour-dates">
+        <div class="tour-row"><span class="tour-day">21 Nov</span><span class="tour-where"><em>Nuba White</em></span><span class="tour-country">Romania</span></div>
+      </div>
     </div>
   </div>
 </section>
